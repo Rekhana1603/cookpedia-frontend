@@ -1,1 +1,86 @@
-<p>contact works!</p>
+<app-header></app-header>
+<div style="height: 300px;" class="container bg-success text-center text-light">
+    <h1 class="pt-5">Contact Us</h1>
+    <p class="p-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum, iure veniam minima odio numquam ullam voluptatem reiciendis ducimus dicta voluptate quidem dignissimos praesentium maiores labore aut, dolorem corporis nemo consectetur!</p>
+</div>
+<div class="container">
+    <div class="row align-items-center my-5">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-5">
+            <h4>Get In Touch</h4>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde incidunt qui cupiditate explicabo alias ut odio aspernatur vitae natus hic ab nulla earum dolores, corrupti, temporibus debitis autem tempore et.</p>
+            <div>
+                <div class="icons">
+                    <div class="d-flex">
+                        <div style="width: 40px; height: 40px; border-radius: 50%;" class="bg-success d-flex justify-content-center align-items-center text-light">
+                            <i class="fa-solid fa-location-crosshairs"></i>
+                        </div>
+                        <div class="d-flex flex-column ms-3">
+                            <h5>Address</h5>
+                            <p>NYC 4567, PO Berlin.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div style="width: 40px; height: 40px; border-radius: 50%;" class="bg-success d-flex justify-content-center align-items-center text-light">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div class="d-flex flex-column ms-3">
+                            <h5>Phone Number</h5>
+                            <p>9086754321</p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div style="width: 40px; height: 40px; border-radius: 50%;" class="bg-success d-flex justify-content-center align-items-center text-light">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div class="d-flex flex-column ms-3">
+                            <h5>E Mail</h5>
+                            <p>mail</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <h4>Follow Us</h4>
+            <div class="d-flex mt-4">
+                <div style="width: 40px; height: 40px; border-radius: 50%;" class="bg-success d-flex justify-content-center align-items-center text-light">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </div>
+                <div style="width: 40px; height: 40px; border-radius: 50%;" class="bg-success ms-3 d-flex justify-content-center align-items-center text-light">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div style="width: 40px; height: 40px; border-radius: 50%;" class="bg-success ms-3 d-flex justify-content-center align-items-center text-light">
+                    <i class="fa-brands fa-twitter"></i>
+                </div>
+                <div style="width: 40px; height: 40px; border-radius: 50%;" class="bg-success ms-3 d-flex justify-content-center align-items-center text-light">
+                    <i class="fa-brands fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+        <div class="col-lg-4">
+                <form [formGroup]="testimonyForm" (ngSubmit)="addTestimony()" class="border rounded shadow p-5">
+                    <h3 class="mb-4">Client Testimony</h3>
+                    <div class="mb-3"> 
+                       <input name="name" formControlName="name" type="text" placeholder="Name" class="form-control">
+                    </div>
+                   <div class="mb-3"> 
+                       <input name="email" formControlName="email" type="email" placeholder="E Mail" class="form-control">
+                    </div>
+                    <div class="mb-3"> 
+                       <textarea name="message" formControlName="message" type="text" placeholder="Message" class="form-control"></textarea>
+                    </div>
+                    <p>By Submitting, you are agreeing our terms and conditions of our website. We may use your details in our site.</p>
+                    <div class="float-end">
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
+                </form>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="w-100">
+        <iframe class="my-5" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31438.834963417114!2d76.2437826544571!3d9.946072438498666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d514abec6bf%3A0xbd582caa5844192!2sKochi%2C%20Kerala!5e0!3m2!1sen!2sin!4v1733380508226!5m2!1sen!2sin" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</div>
+
+<app-footer></app-footer>

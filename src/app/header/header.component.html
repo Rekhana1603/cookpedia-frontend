@@ -1,1 +1,43 @@
-<p>header works!</p>
+<nav class="navbar container navbar-expand-lg mt-5 bg-success">
+    <div class="container">
+      <a class="navbar-brand text-light fw-bolder" routerLink="/"><i class="fa-solid fa-graduation-cap"></i> Cookpedia</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active text-light" aria-current="page" routerLink="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-light" aria-current="page" routerLink="/all-recipes">Recipes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-light" aria-current="page" routerLink="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-light" aria-current="page" routerLink="/contact">Contact</a>
+          </li>
+        </ul>
+        <div class="ms-auto dropdown">
+            <button class="btn dropdown-toggle text-light" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-user"></i>
+              @if (isLoggedin) {
+                <span class="fw-bolder"> Hi, {{loginUsername}} </span>
+              }
+            </button>
+            <ul class="dropdown-menu">
+              @if (isLoggedin) {
+                <li><a class="dropdown-item" routerLink="/profile">Profile</a></li>
+                <li><a class="dropdown-item" routerLink="/save-recipe">Recipe Collection</a></li>
+                <li><button (click)="logout()" class="dropdown-item">Logout <i class="fa-solid fa-right-from-bracket"></i> </button></li>
+              }@else {
+                <li><a class="dropdown-item" routerLink="/login">Login</a></li>
+                <li><a class="dropdown-item" routerLink="/register">Register</a></li>
+              }
+              
+            </ul>
+          </div>
+      </div>
+    </div>
+  </nav>

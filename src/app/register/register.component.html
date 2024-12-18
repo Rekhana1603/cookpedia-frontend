@@ -1,1 +1,40 @@
-<p>register works!</p>
+<div style="min-height: 100vh;" class="row container align-items-center">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-4">  
+            <form [formGroup]="registerForm" (ngSubmit)="register()" class="border rounded shadow p-5 mt-5">
+                <h2 class="text-center mb-5"><i class="fa-solid fa-graduation-cap"></i> Cookpedia</h2>
+                <div class="mb-3"> 
+                   <input name="username" formControlName="username" type="text" placeholder="Username" class="form-control">
+                </div>
+                @if (registerForm.get('username')?.errors && registerForm.get('username')?.touched) {
+                    <div class="text-danger fw-bolder mb-3">*Invalid Username</div>
+                }
+               <div class="mb-3"> 
+                   <input name="email" formControlName="email" type="email" placeholder="E Mail" class="form-control">
+                </div>
+                @if (registerForm.get('email')?.errors && registerForm.get('email')?.touched) {
+                    <div class="text-danger fw-bolder mb-3">*Invalid Email</div>
+                }
+                <div class="mb-3"> 
+                   <input name="password" formControlName="password" type="password" placeholder="Password" class="form-control">
+                </div>
+                @if (registerForm.get('password')?.errors && registerForm.get('password')?.touched) {
+                    <div class="text-danger fw-bolder mb-3">*Invalid Password</div>
+                }
+                <button type="submit" class="btn btn-success w-100">Register</button>
+            </form>
+    </div>
+    <div class="col-lg-1"></div>
+    <div class="col-lg-4">
+        <h1>Create New Account</h1>
+        <h5>What yoy will get?</h5>
+        <ul class="mt-5">
+            <li>Different Recipes</li>
+            <li>Easy way to make Recipe</li>
+            <li>Save your Favourite Recipes</li>
+            <li>Download your Recipes</li>
+        </ul>
+    </div>
+</div>
+<app-footer></app-footer>
+

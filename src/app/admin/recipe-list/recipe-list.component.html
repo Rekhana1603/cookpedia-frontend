@@ -1,0 +1,45 @@
+<div class="me-3">
+    <div class="row">
+        <div class="col-lg-2">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-lg-10">
+            <h1 class="text-center my-4">All Recipe List</h1>
+            <div class="d-flex justify-content-between">
+                <button routerLink="/admin/recipe/add" class="btn btn-primary">+ Add New Recipe</button>
+                <input [(ngModel)]="searchRecipe" placeholder="Search recipe by their Names!!" type="text" class="form-control w-25">
+            </div>
+            <table class="table my-5 shadow">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Image</th>
+                        <th>Cuisine</th>
+                        <th>...</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (recipe of allRecipes | search : searchRecipe ; track $index;let i=$index;) {
+                        <tr>
+                          <td>{{i+1}}</td> 
+                          <td> {{recipe.name}} </td>
+                          <td> <img width="70px" height="70px" [src]="recipe.image" alt=""> </td>
+                          <td> {{recipe.cuisine}} </td>
+                          <td>
+                            <button routerLink="/admin/recipe/{{recipe._id}}/edit" class="btn me-2"><i class="fa-solid fa-edit text-primary"></i> </button>
+                            <button (click)="removeRecipe(recipe._id)" class="btn me-2"><i class="fa-solid fa-trash text-danger"></i> </button>
+                          </td>
+                        </tr>
+                    }
+                    @if ((allRecipes | search : searchRecipe).length==0) {
+                        <tr class="text-danger fw-bolder fs-3">
+                            Recipe not found!!!!
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+</div>

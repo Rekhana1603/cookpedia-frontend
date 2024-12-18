@@ -1,1 +1,21 @@
-<p>login works!</p>
+<div style="min-height: 100vh;" class="d-flex flex-column justify-content-center align-items-center">
+    <h1>Login</h1>
+    <p>More than 100 plus Recipes from around the world</p>
+        <form [formGroup]="loginForm" (ngSubmit)="login()" class="border rounded shadow w-25 p-5 mt-5">
+           <h2 class="text-center mb-5"><i class="fa-solid fa-graduation-cap"></i> Cookpedia</h2>
+           <div class="mb-3"> 
+               <input name="email" formControlName="email" type="email" placeholder="E Mail" class="form-control">
+            </div>
+            @if (loginForm.get('email')?.errors && loginForm.get('email')?.touched) {
+                <div class="text-danger fw-bolder mb-3">*Invalid Email</div>
+            }
+            <div class="mb-3"> 
+               <input name="password" formControlName="password" type="password" placeholder="Password" class="form-control">
+            </div>
+            @if (loginForm.get('password')?.errors && loginForm.get('password')?.touched) {
+                <div class="text-danger fw-bolder mb-3">*Invalid Password</div>
+            }
+            <button type="submit" class="btn btn-success w-100">Login</button>
+        </form>
+</div>
+<app-footer></app-footer>

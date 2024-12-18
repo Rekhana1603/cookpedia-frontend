@@ -1,0 +1,9 @@
+.landingImg{
+    transition: 2s;
+}
+
+.landingImg:hover{
+    scale: 1.12;
+    transition: ease-in-out 1s;
+    rotate: 180deg;
+}
